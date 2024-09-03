@@ -1,41 +1,58 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>靜態網頁範本</title>
-<style>
-  body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-    text-align: center;
-  }
-  header {
-    background-color: #333;
-    color: #fff;
-    padding: 1rem;
-  }
-  main {
-    padding: 1rem;
-  }
-  footer {
-    background-color: #333;
-    color: #fff;
-    padding: 1rem;
-  }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我們的回憶</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<header>
-  <h1>你的網站標題</h1>
-</header>
-<main>
-  <p>這裡是你的網站內容</p>
-</main>
-<footer>
-  <p>&copy; 2024 你的公司名稱</p>
-</footer>
+
+    <div class="scroll-hint">
+        向下拉动以查看我们的回忆
+    </div>
+
+    <div class="container">
+
+        <section class="memory">
+            <div class="text">
+                <h2>我們的第一次約會</h2>
+                <p>那天我們在海邊散步，微風拂面。</p>
+            </div>
+            <div class="image-container">
+                <img src="https://via.placeholder.com/600x400.png?text=Image+1" alt="第一次約會">
+            </div>
+        </section>
+
+        <section class="memory">
+            <div class="text">
+                <h2>生日派對</h2>
+                <p>你給我準備了一個驚喜派對，讓我永生難忘。</p>
+            </div>
+            <div class="image-container">
+                <img src="https://via.placeholder.com/600x400.png?text=Image+2" alt="生日派對">
+            </div>
+        </section>
+
+        <section class="memory">
+            <div class="text">
+                <h2>我們的旅行</h2>
+                <p>那次旅行讓我們更親近彼此。</p>
+            </div>
+            <div class="image-container">
+                <img src="https://via.placeholder.com/600x400.png?text=Image+2" alt="我們的旅行">
+            </div>
+        </section>
+
+        <section class="memory">
+            <div class="text">
+                <h2>生日祝福</h2>
+                <p>親愛的，祝你生日快樂，願我們永遠幸福快樂。</p>
+            </div>
+        </section>
+
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
