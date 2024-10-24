@@ -26,8 +26,9 @@ body {
     left: 50%;
     transform: translate(-50%, 0);  /* 水平居中 */
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction: column; /* 使内容上下排列 */
+    align-items: center; /* 内容居中 */
+    justify-content: center; /* 垂直居中 */
     opacity: 0;         /* 默认隐藏 */
     transition: opacity 0.5s ease-in-out; /* 增加过渡效果 */
     height: 100vh;      /* 保持高度为视口高度 */
@@ -38,39 +39,50 @@ body {
 }
 
 .image-container {
-    flex: 1;
-    padding: 20px;
-    text-align: center;
+    width: 90%;  /* 设置图片容器宽度 */
+    display: block; /* 取消flex布局，改为块级元素 */
+    text-align: center; /* 图片居中对齐 */
+    margin-bottom: 5px; /* 增加与文字部分的距离 */
 }
 
 .image-container img {
-    max-width: 80%;   /* 设置图片最大宽度 */
-    height: auto;     /* 自适应高度 */
+    max-width: 100%;   /* 设置图片最大宽度 */
+    height: auto;      /* 自适应高度 */
     border-radius: 10px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
 }
 
 .text {
-    flex: 1;
-    padding: 20px;
+    flex: 0 0 auto; /* 使文字部分固定高度 */
+    padding: 5px;   /* 减小文字部分的内边距 */
+    text-align: center; /* 文字居中 */
 }
 
 h2 {
-    font-size: 36px;
-    margin-bottom: 10px;
+    font-size: 24px;  /* 调整标题大小 */
+    margin-bottom: 5px; /* 减小标题下的间距 */
 }
 
 p {
-    font-size: 18px;
+    font-size: 16px;  /* 调整段落大小 */
+    margin: 0; /* 去掉段落上下的默认边距 */
 }
 
 /* 新增交替排列的样式 */
-.memory:nth-child(odd) {
-    flex-direction: row; /* 奇数项图左文右 */
+.memory:nth-child(odd) .image-container {
+    order: 1; /* 奇数项图在上 */
 }
 
-.memory:nth-child(even) {
-    flex-direction: row-reverse; /* 偶数项图右文左 */
+.memory:nth-child(odd) .text {
+    order: 2; /* 奇数项文在下 */
+}
+
+.memory:nth-child(even) .image-container {
+    order: 2; /* 偶数项图在下 */
+}
+
+.memory:nth-child(even) .text {
+    order: 1; /* 偶数项文在上 */
 }
 
 /* 最后一个 section 的样式 */
