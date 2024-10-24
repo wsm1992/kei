@@ -3,40 +3,38 @@ body {
     font-family: Arial, sans-serif;
     background-color: #1a1a1a;
     color: #f4f4f4;
+    overflow-x: hidden;
 }
 
 .scroll-hint {
-    position: fixed;
-    top: 10px;
-    left: 50%;
-    transform: translateX(-50%);
+    height: 100vh; /* 填满视口高度 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-size: 18px;
     z-index: 1000;
 }
 
 .container {
-    width: 100%;
-    overflow-x: hidden;
+    height: 400vh;  /* 设置页面高度，确保可以滚动 */
+    position: relative;
 }
 
 .memory {
+    position: fixed;  /* 固定在视口中 */
+    top: 0;          /* 从顶部开始 */
+    left: 50%;
+    transform: translate(-50%, 0);  /* 水平居中 */
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100vh;
-    opacity: 0;
-    transform: translateX(-100%);
-    transition: transform 1s ease, opacity 1s ease;
+    opacity: 0;         /* 默认隐藏 */
+    transition: opacity 0.5s ease-in-out; /* 增加过渡效果 */
+    height: 100vh;      /* 保持高度为视口高度 */
 }
 
 .memory.active {
-    opacity: 1;
-    transform: translateX(0);
-}
-
-.memory.exit {
-    opacity: 0;
-    transform: translateX(100%);
+    opacity: 1; /* 使得 active 的 opacity 为 1 */
 }
 
 .image-container {
@@ -46,7 +44,8 @@ body {
 }
 
 .image-container img {
-    max-width: 100%;
+    max-width: 80%;   /* 设置图片最大宽度 */
+    height: auto;     /* 自适应高度 */
     border-radius: 10px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
 }
@@ -63,4 +62,18 @@ h2 {
 
 p {
     font-size: 18px;
+}
+
+/* 新增交替排列的样式 */
+.memory:nth-child(odd) {
+    flex-direction: row; /* 奇数项图左文右 */
+}
+
+.memory:nth-child(even) {
+    flex-direction: row-reverse; /* 偶数项图右文左 */
+}
+
+/* 最后一个 section 的样式 */
+.memory:last-child {
+    justify-content: center; /* 文本居中显示 */
 }
