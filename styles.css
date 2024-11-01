@@ -1,8 +1,8 @@
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #1a1a1a;
-    color: #f4f4f4;
+    font-family: 'Roboto', sans-serif; /* 使用 Roboto 字体 */
+    background: linear-gradient(to bottom, #ffe0f0, #fff5f8); /* 浅粉色渐变背景 */
+    color: #333333; /* 文字颜色 */
     overflow-x: hidden;
 }
 
@@ -65,11 +65,14 @@ body {
 h2 {
     font-size: 24px;  /* 调整标题大小 */
     margin: 0 0 5px 0; /* 减小标题下的间距 */
+    font-weight: bold; /* 加粗标题 */
 }
 
 p {
     font-size: 16px;  /* 调整段落大小 */
     margin: 0; /* 去掉段落上下的默认边距 */
+    line-height: 1.5; /* 增加行高，提升可读性 */
+    color: #555; /* 调整段落颜色为较深的灰色 */
 }
 
 /* 新增交替排列的样式 */
