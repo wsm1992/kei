@@ -4,6 +4,17 @@ document.addEventListener("DOMContentLoaded", function() {
     const audio = document.getElementById('bgm-audio');
     let audioPlayed = false; // 用于记录音频是否已播放
 
+    function playAudio() {
+        audio.play().then(() => {
+            audioPlayed = true; // 设置为已播放
+        }).catch(error => {
+            console.log("等待用户进一步交互以播放音频:", error);
+        });
+    }
+
+    // 监听 WeixinJSBridgeReady 事件，确保微信浏览器中可以自动播放
+    document.addEventListener("WeixinJSBridgeReady", playAudio, false);
+
     function onScroll() {
         const scrollPosition = window.scrollY;
         const windowHeight = window.innerHeight;
@@ -25,11 +36,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
         // 播放音频
         if (!audioPlayed && scrollFraction > 0) {
-            audio.play().then(() => {
-                audioPlayed = true; // 设置为已播放
-            }).catch(error => {
-                console.log("等待用户进一步交互以播放音频:", error);
-            });
+            playAudio(); // 尝试播放音频
         }
 
         // 保持最后一个 section 可见
