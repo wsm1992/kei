@@ -1,10 +1,12 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     const sections = document.querySelectorAll('.memory');
     const totalSections = sections.length;
     const audio = document.getElementById('bgm-audio');
     let audioPlayed = false; // 用于记录音频是否已播放
 
+    // 播放音频的函数
     function playAudio() {
+        audio.loop = true; // 设置音频循环播放
         audio.play().then(() => {
             audioPlayed = true; // 设置为已播放
         }).catch(error => {
@@ -15,6 +17,12 @@ document.addEventListener("DOMContentLoaded", function() {
     // 监听 WeixinJSBridgeReady 事件，确保微信浏览器中可以自动播放
     document.addEventListener("WeixinJSBridgeReady", playAudio, false);
 
+    // 当音频播放结束时，重置播放时间
+    audio.addEventListener('ended', function () {
+        audio.currentTime = 0; // 重置播放时间
+        audio.play(); // 重新播放
+    });
+
     function onScroll() {
         const scrollPosition = window.scrollY;
         const windowHeight = window.innerHeight;
@@ -24,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function() {
         sections.forEach((section, index) => {
             const start = (index / totalSections);
             const end = ((index + 1) / totalSections);
-            
+
             if (scrollFraction >= start && scrollFraction < end) {
                 section.style.opacity = 1; // 显示当前 section
             } else if (scrollFraction >= end) {
@@ -34,7 +42,7 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         });
 
-        // 播放音频
+        // 尝试播放音频
         if (!audioPlayed && scrollFraction > 0) {
             playAudio(); // 尝试播放音频
         }
@@ -46,5 +54,5 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     window.addEventListener('scroll', onScroll);
-    onScroll();  // 初始化时更新 opacity
+    onScroll(); // 初始化时更新 opacity
 });
