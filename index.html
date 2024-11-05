@@ -3,64 +3,353 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>測試123456</title>
+    <title>生日快樂</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
 <body>
+    <audio id="bgm-audio" autoplay loop>
+        <source src="music/bgm.mp4" type="audio/mp4">
+        您的浏览器不支持 audio 元素。
+    </audio>
 
     <div class="container">
         <section class="memory">
-            <section class="scroll-hint">
-                向下拉动以查看 <span class="arrow">↓</span>
-            </section>
-            
+            <section class="scroll-hint text-2xl">
+                快啲向下碌啦 <span class="arrow"><span class=" text-6xl">↓</span></span>
+            </section>            
+        </section>
+        <section class="memory">
+            <section class="scroll-hint text-2xl">
+                今日係你既生日啊！！<br/>
+                回想返我地從一齊到依家<br/>
+                真係做左好多事情<br/>
+                創造左好多回憶<br/>
+            </section>            
         </section>
 
         <section class="memory">
             <div class="image-container">
-                <img src="images/image1.jpeg" alt="第一次約會">
+                <img src="images/firstdate.jpeg" >
             </div>
             <div class="text">
-                <h2>測試123456</h2>
-                <p>測試123456。</p>
+                <p class="text-xl">一齊跨年</p>
+                <p>我地第一場睇嘅煙花</p>
             </div>
         </section>
 
         <section class="memory">
             <div class="text">
-                <h2>測試123456</h2>
-                <p>測試123456。</p>
+                <p class="text-xl">去左珠海個公園</p>
+                <p>搭覽車 睇日落 玩滑道</p>
             </div>
             <div class="image-container">
-                <img src="images/image2.jpeg" alt="生日派對">
-            </div>
-        </section>
-
-        <section class="memory">
-            <div class="image-container">
-                <img src="images/image3.jpeg" alt="我們的旅行">
-            </div>
-            <div class="text">
-                <h2>測試123456</h2>
-                <p>測試123456。</p>
+                <img src="images/park1.jpeg">
             </div>
         </section>
 
         <section class="memory">
             <div class="image-container">
-                <img src="images/image4.jpeg" alt="我們的旅行">
+                <img src="images/blind.jpeg" >
             </div>
             <div class="text">
-                <h2>測試123456</h2>
-                <p>測試123456。</p>
+                <p class="text-xl">你大頭蝦整親隻眼</p>
+                <p>開始成為鏡湖CP😂</p>
+                <p>受傷嘅你依然好堅強 可以獨自去日本</p>
+            </div>
+        </section>
+
+        <section class="memory">
+            <div class="image-container">
+                <img src="images/korea.jpeg" >
+            </div>
+            <div class="text">
+                <p class="text-xl">唔係好算的第一次出國旅行</p>
+                <p>聽到人地話我係兵你會想幫我講說話，感謝你😊</p>
+            </div>
+        </section>
+
+        <section class="memory">
+            <div class="image-container">
+                <img src="images/valuntine.jpeg" >
+            </div>
+            <div class="text">
+                <p class="text-xl">第一個情人節</p>
+                <p>見到你收到花咁開心，我都好開心</p>
+            </div>
+        </section>
+
+        <section class="memory">
+            <div class="image-container">
+                <img src="images/san.jpeg" >
+            </div>
+            <div class="text">
+                <p class="text-xl">松山睇花影相</p>
+                <p>跟住我地又去左松山影相同埋去戲院睇間諜家家酒</p>
+                <p>你總是會陪我做我鐘意做既事</p>
+            </div>
+        </section>
+
+        <section class="memory">
+            <div class="image-container">
+                <img src="images/flower.jpeg" >
+            </div>
+            <div class="text">
+                <p>你嬲左我送俾你嘅花花</p>
+            </div>
+        </section>
+
+        <section class="memory">
+            <div class="image-container">
+                <img src="images/waterpool.jpeg" >
+            </div>
+            <div class="text">
+                <p class="text-xl">第一次一齊跑步</p>
+                <p>為馬拉松做準備</p>
+            </div>
+        </section>
+
+        <section class="memory">
+            <div class="image-container">
+                <img src="images/mezza9.jpeg" >
+            </div>
+            <div class="text">
+                <p class="text-xl">一齊食Mezza9</p>
+                <p>多謝你請我食大餐😘</p>
+            </div>
+        </section>
+
+        <section class="memory">
+            <div class="image-container">
+                <img src="images/bowl.jpeg" >
+            </div>
+            <div class="text">
+                <p class="text-xl">一齊整陶藝</p>
+                <p>雖然整完之後冇用過😜</p>
+            </div>
+        </section>
+
+        <section class="memory">
+            <div class="image-container">
+                <img src="images/marazon.jpeg" >
+            </div>
+            <div class="text">
+                <p class="text-xl">終於跑左馬拉松</p>
+                <p>跑之前其實冇乜興趣跑，但同你一路跑一路有講有笑，真係好開心</p>
+            </div>
+        </section>
+
+        <section class="memory">
+            <div class="image-container">
+                <img src="images/yangshuo.jpeg" >
+            </div>
+            <div class="text">
+                <p class="text-xl">然後又去左陽朔</p>
+                <p></p>
+            </div>
+        </section>
+
+        <section class="memory">
+            <div class="image-container">
+                <img src="images/guangzhou.jpeg" >
+            </div>
+            <div class="text">
+                <p class="text-xl">同埋廣州</p>
+                <p>一齊去旅行真係好開心</p>
+            </div>
+        </section>
+
+        <section class="memory">
+            <div class="image-container">
+                <img src="images/dance.jpeg" >
+            </div>
+            <div class="text">
+                <p class="text-xl">我第一次睇跳舞表演</p>
+                <p>同你一齊之後我都擴闊左眼界，嘗試好多以前冇試過嘅</p>
+            </div>
+        </section>
+
+        <section class="memory">
+            <div class="image-container">
+                <img src="images/donut.jpeg" >
+            </div>
+            <div class="text">
+                <p class="text-xl">你整嘅冬甩同藍莓梳打</p>
+                <p>亦多謝你經常怕我同fd玩嗰陣會餓親</p>
+                <p>會整野俾我食，或者買野食俾我</p>
+            </div>
+        </section>
+
+        <section class="memory">
+            <div class="image-container">
+                <img src="images/fa.jpeg" >
+            </div>
+            <div class="text">
+                <p class="text-xl">歡迎加入二次元</p>
+                <p>有人陪我做哩啲野真係好開心</p>
+                <p>多謝你因為我而冇睇過都來，亦好有耐心聽我分享</p>
+            </div>
+        </section>
+
+        <section class="memory">
+            <div class="image-container">
+                <img src="images/dinner.jpeg" >
+            </div>
+            <div class="text">
+                <p class="text-xl">我第一次下廚</p>
+                <p>應該真係算我第一次認真煮一道餸</p>
+                <p>煮飯仔好開心</p>
+            </div>
+        </section>
+
+        <section class="memory">
+            <div class="image-container">
+                <img src="images/bounce.jpeg" >
+            </div>
+            <div class="text">
+                <p class="text-xl">第一次跳彈床</p>
+                <p>然後又帶左我去玩跳彈床</p>
+                <p>都係多得你帶我去先有得玩咋😆</p>
+            </div>
+        </section>
+
+        <section class="memory">
+            <div class="image-container">
+                <img src="images/61.jpeg" >
+            </div>
+            <div class="text">
+                <p class="text-xl">第一次過兒童節</p>
+                <p>好多謝你總會設法彌補我細過唔開心嘅經歷</p>
+                <p>有你真好🥰</p>
+            </div>
+        </section>
+
+        <section class="memory">
+            <div class="image-container">
+                <img src="images/cod.jpeg" >
+            </div>
+            <div class="text">
+                <p class="text-xl">新濠水上樂園</p>
+                <p>好彩你識揀啲冇乜人嘅時間先可以玩得咁爽</p>
+                <p>下年要再去～</p>
+            </div>
+        </section>
+
+        <section class="memory">
+            <div class="image-container">
+                <img src="images/cloth.jpeg" >
+            </div>
+            <div class="text">
+                <p class="text-xl">我地親自畫嘅情侶裝</p>
+                <p>畫得咁靚得唔得架</p>
+            </div>
+        </section>
+
+        <section class="memory">
+            <div class="image-container">
+                <img src="images/717.png" >
+            </div>
+            <div class="text">
+                <p class="text-xl">幫我過生日</p>
+                <p>真係好多謝好多謝你咁用心幫我準備咁多份禮物🥹俾左一個難忘的生日我</p>
+            </div>
+        </section>
+
+        <section class="memory">
+            <div class="image-container">
+                <img src="images/cloth.jpeg" >
+            </div>
+            <div class="text">
+                <p class="text-xl">中秋節</p>
+                <p>一齊整燈籠出來玩都好開心～</p>
+            </div>
+        </section>
+
+        <section class="memory">
+            <div class="image-container">
+                <img src="images/disney.jpeg" >
+            </div>
+            <div class="text">
+                <p class="text-xl">然後第一次來迪士尼</p>
+                <p>陪你去你鍾意嘅地方我都好開心</p>
+            </div>
+        </section>
+
+        <section class="memory">
+            <div class="image-container">
+                <img src="images/travel1.jpeg" >
+            </div>
+            <div class="text">
+                <p class="text-xl">真 第一次去旅行</p>
+                <p>等左咁耐我地終於都一齊出法去廈門</p>
+            </div>
+        </section>
+
+        <section class="memory">
+            <div class="image-container">
+                <img src="images/travel2.jpeg" >
+            </div>
+            <div class="text">
+                <p class="text-xl">雖然廈門冇咩好玩</p>
+                <p>但同你一齊去邊都咁開心</p>
+            </div>
+        </section>
+
+        <section class="memory">
+            <div class="image-container">
+                <img src="images/travel3.jpeg" >
+            </div>
+            <div class="text">
+                <p>同埋都好多謝你成個旅程都咁照顧我</p>
             </div>
         </section>
 
         <section class="memory">
             <div class="text">
-                <h2>love you</h2>
+                <p class="text-xl">希望可以繼續同你一齊創造好多好多好開心好難忘嘅回憶</p>
+            </div>
+        </section>
+
+        <section class="memory">
+            <div class="text">
+                <p class="text-xl">可能我冇成日掛係嘴邊 但其實⋯⋯</p>
+            </div>
+        </section>
+
+        <section class="memory">
+            <div class="text">
+                <p class="text-xl">我真係好鐘意好鐘意</p>
+            </div>
+        </section>
+
+        <section class="memory">
+            <div class="text">
+                <p class="text-2xl">好鐘意好鐘意</p>
+            </div>
+        </section>
+
+        <section class="memory">
+            <div class="text">
+                <p class="text-3xl">好鐘意好鐘意好鐘意</p>
+            </div>
+        </section>
+
+        <section class="memory">
+            <div class="text">
+                <p class="text-4xl">好鐘意好鐘意好鐘意好鐘意</p>
+            </div>
+        </section>
+
+        <section class="memory">
+            <div class="text">
+                <p class="text-4xl">好鍾意你架～～～～～～～！！❤️</p>
+            </div>
+        </section>
+
+        <section class="memory">
+            <div class="text">
+                <p class="text-3xl">祝你生日快樂 我最愛嘅琪琪😘</p>
             </div>
         </section>
     </div>

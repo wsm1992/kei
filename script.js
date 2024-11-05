@@ -1,7 +1,9 @@
 document.addEventListener("DOMContentLoaded", function() {
     const sections = document.querySelectorAll('.memory');
     const totalSections = sections.length;
-    
+    const audio = document.getElementById('bgm-audio');
+    let audioPlayed = false; // 用于记录音频是否已播放
+
     function onScroll() {
         const scrollPosition = window.scrollY;
         const windowHeight = window.innerHeight;
@@ -9,7 +11,6 @@ document.addEventListener("DOMContentLoaded", function() {
         const scrollFraction = scrollPosition / maxScrollHeight; // 计算滚动进度
 
         sections.forEach((section, index) => {
-            // 计算当前 section 应该显示的透明度
             const start = (index / totalSections);
             const end = ((index + 1) / totalSections);
             
@@ -21,6 +22,20 @@ document.addEventListener("DOMContentLoaded", function() {
                 section.style.opacity = 0; // 隐藏当前 section
             }
         });
+
+        // 播放音频
+        if (!audioPlayed && scrollFraction > 0) {
+            audio.play().then(() => {
+                audioPlayed = true; // 设置为已播放
+            }).catch(error => {
+                console.log("等待用户进一步交互以播放音频:", error);
+            });
+        }
+
+        // 保持最后一个 section 可见
+        if (scrollFraction > 1 - 1 / maxScrollHeight) {
+            sections[sections.length - 1].style.opacity = 1;
+        }
     }
 
     window.addEventListener('scroll', onScroll);
